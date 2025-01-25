@@ -4,7 +4,6 @@
     padding: 0;
     box-sizing: border-box;
   }
-  
   body {
     font-family: Arial, sans-serif;
     line-height: 1.6;
@@ -154,7 +153,6 @@
     border-radius: 50%;
     z-index: 10;
   }
-  
   button.prev {
     left: 10px;
   }
@@ -168,8 +166,7 @@
     background-color: rgba(0, 0, 0, 0.8);
   }
   
-  
-  /* Mobile Responsiveness */
+   /* Mobile Responsiveness */
   .carousel img {
     width: 100%;
   }
@@ -204,6 +201,7 @@
     .content {
       grid-template-columns: 1fr; /* 1 column on mobile */
     }
+ 
   }
       
   
