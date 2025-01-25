@@ -1,17 +1,19 @@
-let currentIndex = 0;
+let currentSlideIndex = 0;
 
+// Select carousel elements
+const track = document.querySelector('.carousel');
+const slides = document.querySelectorAll('.carousel-item');
+const totalSlides = slides.length;
+
+// Move slides by updating the transform property
 function moveSlide(direction) {
-  const items = document.querySelectorAll('.carousel-item');
-  const totalItems = items.length;
-
-  currentIndex += direction;
-
-  if (currentIndex < 0) {
-    currentIndex = totalItems - 1;
-  } else if (currentIndex >= totalItems) {
-    currentIndex = 0;
-  }
-
-  const carousel = document.querySelector('.carousel');
-  carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+  currentSlideIndex = (currentSlideIndex + direction + totalSlides) % totalSlides;
+  const slideWidth = slides[0].clientWidth;
+  track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
 }
+
+// Recalculate slide position on window resize
+window.addEventListener('resize', () => {
+  const slideWidth = slides[0].clientWidth;
+  track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+});
