@@ -16,4 +16,6 @@ function moveSlide(direction) {
 window.addEventListener('resize', () => {
   const slideWidth = slides[0].clientWidth;
   track.style.transform = `translateX(-${currentSlideIndex * slideWidth}px)`;
+
+
 });
